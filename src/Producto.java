@@ -5,7 +5,7 @@ public class Producto {
     private Float precio;
 
     public Float costoFinal(Integer cantCuotas) {
-        Float co
+        Float costo=0;
     }
 
 }
