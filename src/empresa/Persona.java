@@ -1,6 +1,7 @@
+package empresa;
+
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.format.DateTimeFormatter;
 
 public class Persona {
 
@@ -32,11 +33,17 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public void edad() {
-        LocalDate ahora = LocalDate.now();
-        Period periodo = Period.between(fechaDeNacimiento, ahora);
-        System.out.printf("L edad es: %s años, %s meses y %s días",
-                periodo.getYears(), periodo.getMonths(), periodo.getDays());
+    public Integer edad() {
+        Integer edad=0;
+        // Calculamos la edad:
+        //Obtenemos la fecha actual:
+        LocalDate fechaActual=LocalDate.now();
+        //Obtenemos el periodo entre dos fechas:
+        Period periodo=Period.between(fechaDeNacimiento, fechaActual);
+        //Ahora obtenemos la cantidad de años en ese periodo:
+        edad=periodo.getYears();
+        //Devolvemos la edad:
+        return edad;
     }
 
 }
